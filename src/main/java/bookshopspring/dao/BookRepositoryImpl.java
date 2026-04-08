@@ -1,5 +1,6 @@
 package bookshopspring.dao;
 
+import bookshopspring.exceptions.DataProcessingException;
 import bookshopspring.model.Book;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -32,7 +33,7 @@ public class BookRepositoryImpl implements BookRepository {
             if (transaction != null) {
                 transaction.rollback();
             }
-            throw new RuntimeException("Can not save book", e);
+            throw new DataProcessingException("Can not resolve save method",e);
         } finally {
             if (manager != null) {
                 manager.close();
@@ -43,8 +44,11 @@ public class BookRepositoryImpl implements BookRepository {
 
     @Override
     public List<Book> findAll() {
-        try (EntityManager manager = entityManagerFactory.createEntityManager()) {
+        try {
+            EntityManager manager = entityManagerFactory.createEntityManager();
             return manager.createQuery("select b from Book b", Book.class).getResultList();
+        } catch (Exception e) {
+            throw new DataProcessingException("Can not resolve findAll method",e);
         }
     }
 }
