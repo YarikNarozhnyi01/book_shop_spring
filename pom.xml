@@ -11,8 +11,8 @@
     <groupId>com.spring</groupId>
     <artifactId>book_shop_spring</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>book_shop_spring</name>
-    <description>book_shop_spring</description>
+    <name>bookshopspring</name>
+    <description>bookshopspring</description>
     <url/>
     <licenses>
         <license/>

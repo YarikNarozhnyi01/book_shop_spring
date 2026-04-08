@@ -1,4 +1,4 @@
-package com.spring.book_shop_spring;
+package bookshopspring;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

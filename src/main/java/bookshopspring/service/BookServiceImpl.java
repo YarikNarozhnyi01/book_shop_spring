@@ -1,10 +1,10 @@
-package com.spring.book_shop_spring.service;
+package bookshopspring.service;
 
-import com.spring.book_shop_spring.dao.BookRepository;
-import com.spring.book_shop_spring.model.Book;
+import bookshopspring.dao.BookRepository;
+import bookshopspring.model.Book;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
 
 @Service
 public class BookServiceImpl implements BookService {
