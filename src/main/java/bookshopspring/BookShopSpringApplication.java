@@ -23,12 +23,13 @@ public class BookShopSpringApplication {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                Book book1 = new Book();
-                book1.setAuthor("Steven King");
-                book1.setTitle("It");
-                book1.setIsbn("something");
-                book1.setPrice(BigDecimal.valueOf(100));
-                bookService.save(book1);
+                Book book = new Book();
+                book.setAuthor("Steven King");
+                book.setTitle("It");
+                book.setIsbn("something");
+                book.setPrice(BigDecimal.valueOf(100));
+                bookService.save(book);
+                bookService.findAll().forEach(System.out::println);
             }
         };
     }
